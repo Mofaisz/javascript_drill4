@@ -4,13 +4,13 @@ function getEmailAddress(data) {
   if (!data) {
     return null;
   }
-  //initialising an empty array
-  const email = [];
+  //initialising an empty object
+  const email = {};
   for (let values of data) {
-    email.push(values.email); //appends an email of users
+    email[values.name]=values.email; //storing name as key and email as values
   }
-  //checks if list contains elements
-  if (email.length > 0) {
+  //checks if email(object) contains elements
+  if (Object.keys(email).length > 0) {
     return email;
   }
   //if it doesn't contains,return null
