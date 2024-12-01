@@ -1,4 +1,3 @@
-//Given the dataset of individuals, write a function that accesses and returns the email addresses of all individuals.
 //function to get list of email of users
 function getEmailAddress(data) {
   //checks for falsy values
