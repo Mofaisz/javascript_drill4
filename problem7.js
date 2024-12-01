@@ -1,4 +1,3 @@
-//    Write a function that accesses and prints the names and email addresses of individuals aged 25.
 //Function to get names and email of persons whose age is 25
 function namesAndEmailsOfAge25(data) {
   //Initialising an empty objects
