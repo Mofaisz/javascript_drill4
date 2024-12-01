@@ -1,5 +1,4 @@
-//    Implement a loop to access and log the city and country of each individual in the dataset.
-//Fucntion to get city and country of every Persons
+//Function to get city and country of every Persons
 function getcityAndCountry(data) {
   if (!data) {
     return null;
@@ -8,8 +7,8 @@ function getcityAndCountry(data) {
   const cityAndCountry = {};
   //Iterating values of data
   for (let values of data) {
-    //Storing country as key and city as values
-    cityAndCountry[values.country] = values.city;
+    //Storing name as key and country,city as values
+    cityAndCountry[values.name]={Country:values.country,City:values.city};
   }
   if (Object.keys(cityAndCountry).length > 0) {
     return cityAndCountry;
