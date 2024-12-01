@@ -3,15 +3,15 @@ function getAges(data) {
   if (!data) {
     return null;
   }
-  //Initialising an empty array
-  const ages = [];
+  //Initialising an empty object
+  const ages = {};
   //Iterating values of data
   for (let values of data) {
-    //Appends age into ages list
-    ages.push(values.age);
+    //initialising name as key and age as value
+    ages[values.name]=values.age;
   }
   //checks if any values is present in ages
-  if (ages.length) {
+  if (Object.keys(ages).length) {
     return ages;
   }
   return null;
