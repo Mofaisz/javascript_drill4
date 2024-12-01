@@ -13,10 +13,10 @@ function getStudentNamesFromAustrailia(data) {
       //If both the condition are true append into names list
       names.push(values.name);
     }
-  }//checks if names have some values or not
+  } //checks if names have some values or not
   if (data.length > 0) {
     return names;
-  }//If it does not return null
+  } //If it does not return null
   return null;
 }
 module.exports = getStudentNamesFromAustrailia;
