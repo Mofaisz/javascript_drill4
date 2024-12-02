@@ -1,7 +1,7 @@
 //function to get list of individual who is student and lives in Australia
 function getStudentNamesFromAustrailia(data) {
-  //Checks for falsy values
-  if (!data) {
+  //checks for falsy values and checking it data contains Array or not
+  if (!data || !Array.isArray(data)) {
     return null;
   }
   //Initialising an empty array
