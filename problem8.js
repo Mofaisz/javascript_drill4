@@ -1,6 +1,7 @@
 //Function to get city and country of every Persons
 function getcityAndCountry(data) {
-  if (!data) {
+  //checks for falsy values and checking it data contains Array or not
+  if (!data || !Array.isArray(data)) {
     return null;
   }
   //Initialising an empty objects
