@@ -1,5 +1,9 @@
 //Function to get names and email of persons whose age is 25
 function namesAndEmailsOfAge25(data) {
+  //checks for falsy values and checking it data contains Array or not
+  if (!data || !Array.isArray(data)) {
+    return null;
+  }
   //Initialising an empty objects
   const namesAndEmail = {};
   //Iterating the values of data
