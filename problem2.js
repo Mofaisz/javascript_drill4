@@ -1,7 +1,7 @@
 //Function to get hobbies of individual with specific age
 function hobbiesByAge(data) {
-  //Checks for falsy values
-  if (!data) {
+  //checks for falsy values and checking it data contains Array or not
+  if (!data || !Array.isArray(data)) {
     return null;
   }
   //Initialising an empty objects
