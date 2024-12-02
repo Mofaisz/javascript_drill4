@@ -1,7 +1,7 @@
 //function to get list of email of users
 function getEmailAddress(data) {
-  //checks for falsy values
-  if (!data) {
+  //checks for falsy values and checking it data contains Array or not
+  if (!data || !Array.isArray(data)) {
     return null;
   }
   //initialising an empty object
