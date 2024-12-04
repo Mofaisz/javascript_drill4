@@ -4,19 +4,21 @@ function namesAndEmailsOfAge25(data) {
   if (!data || !Array.isArray(data)) {
     return null;
   }
-  //Initialising an empty objects
-  const namesAndEmail = {};
-  //Iterating the values of data
-  for (let values of data) {
-    //Checks if person age is 25
-    if (values.age === 25) {
-      //if condition becomes true name as key and email as values will be initialised in namesAndEmails
-      namesAndEmail[values.name] = values.email;
+
+  // Iterates over the value of data, creates an objects and storename as key and email as values
+  const namesAndEmail = data.reduce((accumulator, value, index) => {
+    if (value.age == 25) {
+      accumulator[value.name] = value.email;
     }
-  } //Checks if objects containing some values or not
+    // returns the updated accumulator
+    return accumulator;
+  }, {});
+
+  //Checks if objects containing some values or not
   if (Object.keys(namesAndEmail).length) {
     return namesAndEmail;
   } //If it is not containing any values return null
   return null;
 }
+
 module.exports = namesAndEmailsOfAge25;
