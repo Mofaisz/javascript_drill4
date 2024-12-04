@@ -4,20 +4,20 @@ function hobbiesByAge(data) {
   if (!data || !Array.isArray(data)) {
     return null;
   }
-  //Initialising an empty objects
-  const hobbiesAndAge = {};
-  //Iterating values of data
-  for (let values of data) {
-    if (!hobbiesAndAge[values.age]) {
-      hobbiesAndAge[values.name] = {
-        age: values.age,
-        hobbies: values.hobbies.join(" ,"),
-      };
-    }
-  } //Checks if objects is empty or not
-  if (Object.keys(hobbiesAndAge).length > 0) {
-    return hobbiesAndAge;
-  } //if it is empty, return null
-  return null;
+  // Iterating over the data and c]storing name as key and age and hobbies into another objects
+  const hobbiesWithAge = data.reduce((accumulator, initialValue) => {
+    accumulator[initialValue.name] = {
+      age: initialValue.age,
+      hobbies: initialValue.hobbies.join(" "),
+    };
+    return accumulator; //returns the updated accumulator
+  }, {});
+
+  //checks if hobbiesByAge contins elements or not
+  if (Object.keys(hobbiesByAge)) {
+    return hobbiesWithAge;
+  }
+  return null; // if it doesn;t contains return null to avoid error
 }
+
 module.exports = hobbiesByAge;
