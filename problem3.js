@@ -4,18 +4,22 @@ function getStudentNamesFromAustrailia(data) {
   if (!data || !Array.isArray(data)) {
     return null;
   }
-  //Initialising an empty array
-  const names = [];
-  //Iterating values of data
-  for (let values of data) {
-    //checks if user is student and lives in Austrailia
-    if (values.isStudent && values.country === "Australia") {
-      //If both the condition are true append into names list
-      names.push(values.name);
-    }
-  } //checks if names have some values or not
-  if (data.length > 0) {
-    return names;
+  /* Iterates over the value of data and 
+  after doing certain operation stores
+   the value into complete details which is array
+  */
+  const studentsFromAutrailia = data.filter((value) =>{
+    return value.isStudent && value.country === "Australia" ;
+  });
+  
+  //iterates over the studentsFromAutrailia and extracts only the name 
+  const name = studentsFromAutrailia.map((value =>{
+    return value.name;
+  }))
+
+  // checks if name contains any value or not
+  if (name.length > 0) {
+    return name;
   } //If it does not return null
   return null;
 }
