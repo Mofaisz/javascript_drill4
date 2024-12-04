@@ -4,17 +4,18 @@ function getAges(data) {
   if (!data || !Array.isArray(data)) {
     return null;
   }
-  //Initialising an empty object
-  const ages = {};
-  //Iterating values of data
-  for (let values of data) {
-    //initialising name as key and age as value
-    ages[values.name]=values.age;
-  }
+  //Iterates over data, creates an objects and storing name as key and age as values
+  const ages = data.reduce((accumulator, value) => {
+    // storing name as key and age as value
+    accumulator[value.name] = value.age;
+    // return the updated acccumulator
+    return accumulator;
+  }, {});
   //checks if any values is present in ages
   if (Object.keys(ages).length) {
     return ages;
   }
-  return null;
+  return null;  
 }
+
 module.exports = getAges;
